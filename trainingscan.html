@@ -20,7 +20,7 @@ body, html{
 
     <script>
         var ticker;
-
+        var emojis = [127942, 128517, 128525, 128536, 128548, 128561, 128583, 128640, 127464, 127541, 9917, 9889, 9981, 127942, 128170, 128175]
         function myFunction() {        
             
             document.getElementById("number").innerHTML = "&#127939"; 
@@ -40,8 +40,8 @@ body, html{
 
                 clearInterval(ticker);
                 ticker = null
-                emoji =  Math.floor(Math.random() * (128552 - 128512) + 128512);    
-                document.getElementById("number").innerHTML = "&#" + emoji;
+                emoji =  Math.floor(Math.random() * emojis.length);    
+                document.getElementById("number").innerHTML = "&#" + emojis[emoji];
             }
 
         }
