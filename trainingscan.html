@@ -16,12 +16,13 @@ body, html{
 
 </style>
 <body>
-    <div id="number" class="container" onclick=myFunction()>&#128526</div>
+    <div id="number" class="container" onclick=randomNumberAndColor()>&#128526</div>
 
     <script>
         var ticker;
         var emojis = [127942, 128517, 128525, 128536, 128548, 128561, 128583, 128640, 127464, 127541, 9917, 9889, 9981, 127942, 128170, 128175]
-        function myFunction() {        
+        var colors = ["yellow", "red", "blue", "purple"]
+        function randomNumberAndColor() {        
             
             document.getElementById("number").innerHTML = "&#127939"; 
 
@@ -31,7 +32,9 @@ body, html{
                     document.getElementById("number").innerHTML = Math.floor(Math.random() * 20);
 
                     var body = document.body; 
-                    body.style.backgroundColor = body.style.backgroundColor == "yellow" ? "orange" : "yellow";
+                    var colorIdx = Math.floor(Math.random() * colors.length)
+                    //body.style.backgroundColor = body.style.backgroundColor == "yellow" ? "red" : "yellow";
+                    body.style.backgroundColor = colors[colorIdx];
                 }, 3000);
 
             }
