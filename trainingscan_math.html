@@ -16,20 +16,20 @@ body, html{
 
 </style>
 <body>
-    <div id="number" class="container" onclick=randomNumberAndColor_math()> &#128526 </div>
+    <div id="number" class="container" onclick=randomNumberAndColor()> &#128526 </div>
 
     <script>
         var ticker;
         var emojis = [127942, 128517, 128525, 128536, 128548, 128561, 128583, 128640, 127464, 127541, 9917, 9889, 9981, 127942, 128170, 128175]
         var colors = ["yellow", "LightCoral", "LightBlue"]
-        function randomNumberAndColor_math() {        
+        function randomNumberAndColor() {        
             
             document.getElementById("number").innerHTML = "&#127939"; 
 
             if (ticker == null) {
 
                 ticker = setInterval(function() {
-                    document.getElementById("number").innerHTML = "" + Math.floor(Math.random() * 10) + " + " Math.floor(Math.random() * 10);
+                    document.getElementById("number").innerHTML = Math.floor(Math.random() * 10) + " + " + Math.floor(Math.random() * 10);
 
                     var body = document.body; 
                     var colorIdx = Math.floor(Math.random() * colors.length)
