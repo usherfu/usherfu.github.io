@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<style>
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color:Green;
+    font-size:70vh;
+}
+
+body, html{
+  height:100%;
+}
+
+</style>
+<body>
+    <div id="number" class="container" onclick=randomNumberAndColor()>&#128526</div>
+
+    <script>
+        var ticker;
+        var emojis = [127942, 128517, 128525, 128536, 128548, 128561, 128583, 128640, 127464, 127541, 9917, 9889, 9981, 127942, 128170, 128175]
+        var colors = ["yellow", "LightCoral", "LightBlue"]
+        function randomNumberAndColor() {        
+            
+            document.getElementById("number").innerHTML = "&#127939"; 
+
+            if (ticker == null) {
+
+                ticker = setInterval(function() {
+                    document.getElementById("number").innerHTML = Math.floor(Math.random() * 10) + ` + ` Math.floor(Math.random() * 10);
+
+                    var body = document.body; 
+                    var colorIdx = Math.floor(Math.random() * colors.length)
+                    //body.style.backgroundColor = body.style.backgroundColor == "yellow" ? "red" : "yellow";
+                    body.style.backgroundColor = colors[colorIdx];
+                }, 3000);
+
+            }
+            else {
+
+                clearInterval(ticker);
+                ticker = null
+                emoji =  Math.floor(Math.random() * emojis.length);    
+                document.getElementById("number").innerHTML = "&#" + emojis[emoji];
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
